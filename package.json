@@ -5,6 +5,7 @@
 		"build": "tsc test.ts"
 	},
 	"devDependencies": {
+		"@types/node": "^24.3.0",
 		"typescript": "^5.6.2"
 	},
 	"private": true
