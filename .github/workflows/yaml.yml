@@ -25,6 +25,6 @@ jobs:
     timeout-minutes: 3
     steps:
       - uses: actions/checkout@v5
-      - run: |
-          bash <(curl https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
-          ./actionlint -color
+      - uses: docker://rhysd/actionlint:1.7.7
+        with:
+          args: -color
