@@ -25,6 +25,7 @@ jobs:
     timeout-minutes: 3
     steps:
       - uses: actions/checkout@v5
-      - uses: docker://rhysd/actionlint:latest
+      - name: Run actionlint
+        uses: docker://rhysd/actionlint
         with:
           args: -color
