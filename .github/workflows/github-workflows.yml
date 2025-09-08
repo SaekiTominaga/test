@@ -1,14 +1,9 @@
-name: YAML files
+name: GitHub workflow files
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
-    branches:
-      - main
     paths:
-      - ".github/workflows/*.yml"
+      - '.github/workflows/*.yml'
   workflow_dispatch:
 
 defaults:
