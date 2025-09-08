@@ -1,2 +1,2 @@
-const a: number = "a";
-console.debug(a);
+const c: number = "c";
+console.debug(c);
