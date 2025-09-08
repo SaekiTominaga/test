@@ -1,4 +1,5 @@
 {
+	"include": ["src/**/*.ts"],
 	"compilerOptions": {
 		/* Type Checking */
 		"allowUnreachableCode": false,
@@ -21,6 +22,7 @@
 
 		/* Emit */
 		"newLine": "lf",
+		"outDir": "dist",
 
 		/* Interop Constraints */
 		"erasableSyntaxOnly": true,

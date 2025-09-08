@@ -1,31 +1,24 @@
-name: YAML files
+name: JavaScript files
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
-    branches:
-      - main
     paths:
-      - ".github/workflows/*.yml"
+      - "packages/*/src/**/*.ts"
+      - "eslint.config.js"
   workflow_dispatch:
-
-defaults:
-  run:
-    shell: bash
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  lint:
+  build:
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
-      - name: Run actionlint
-        uses: docker://rhysd/actionlint:latest
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
-          args: -color
+          node-version: "24"
+      - run: npm ci
+      - run: npm run build
