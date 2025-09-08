@@ -3,8 +3,7 @@ name: JavaScript files
 on:
   pull_request:
     paths:
-      - "packages/*/src/**/*.ts"
-      - "eslint.config.js"
+      - "src/**/*.ts"
   workflow_dispatch:
 
 concurrency:
