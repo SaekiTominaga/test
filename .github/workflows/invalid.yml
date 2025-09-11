@@ -1,5 +1,11 @@
 name: invalid
 
 on:
-pull_request:
+  pull_request:
   workflow_dispatch:
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "AAA"
