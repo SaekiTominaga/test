@@ -1,9 +1,9 @@
-name: JavaScript files
+name: package A
 
 on:
   pull_request:
     paths:
-      - "src/**/*.ts"
+      - "packages/a/src/**/*.ts"
   workflow_dispatch:
 
 concurrency:
@@ -24,4 +24,4 @@ jobs:
         with:
           node-version: "24"
       - run: npm ci
-      - run: npm run build
+      - run: npm run build -w "@w0s/a"
