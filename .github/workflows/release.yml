@@ -22,15 +22,23 @@ jobs:
         with:
           node-version: "24"
           registry-url: "https://registry.npmjs.org/"
-
       - run: npm ci
 
-      # GitHub Release のタグ名をバージョンとして反映
       - name: Update version
+        id: extract
         run: |
           tag="${GITHUB_REF#refs/tags/}"
           package="${tag%@*}"
           version="${tag##*@}"
-          npm version "$version" -w "$package"
-          git commit -am "chore: release $version"
+          echo "package=$package" >> $GITHUB_OUTPUT
+          echo "version=$version" >> $GITHUB_OUTPUT
+          echo "📦 $package, 🔖 $version"
+          npm version "$version" -w "$package" --no-git-tag-version
+
+      - name: Commit version update
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add .
+          git commit -am "chore: release ${{ steps.extract.outputs.package }}@${{ steps.extract.outputs.version }}"
           git push
