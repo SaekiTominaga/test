@@ -1,2 +1,2 @@
-const foo = "d";
+const foo = "d1";
 console.debug(foo);
