@@ -6,7 +6,7 @@ changelog:
     - title: Exciting New Features 🎉
       labels:
         - enhancement
-    - title: Other Changes
+    - title: Other Changes2
       labels:
         - "*"
       exclude:
