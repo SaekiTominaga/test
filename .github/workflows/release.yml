@@ -38,11 +38,11 @@ jobs:
           version="${tag##*@}"
           echo "package=$package" >> $GITHUB_OUTPUT
           echo "version=$version" >> $GITHUB_OUTPUT
-          echo "📦 $package, 🔖 $version"
           npm version "$version" -w "$package" --no-git-tag-version
 
-      - name: Commit version update
+      - name: Commit
         run: |
+          git config user.name "github-actions"
           git add .
           git commit -am "chore: release ${{ steps.extract.outputs.package }}@${{ steps.extract.outputs.version }}"
           git push
