@@ -2,7 +2,7 @@ name: Release to npm
 
 on:
   release:
-    types: [created]
+    types: [published]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 3
     permissions:
-      contents: read
+      contents: write
       id-token: write
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
