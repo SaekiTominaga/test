@@ -1,2 +1,2 @@
-const foo = "f";
+let foo = "f";
 console.debug(foo);
