@@ -3,7 +3,7 @@ name: package A
 on:
   pull_request:
     paths:
-      - "packages/a"
+      - "packages/a/**"
   workflow_dispatch:
 
 concurrency:
