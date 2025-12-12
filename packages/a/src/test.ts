@@ -1,2 +1,2 @@
 const foo = "f";
-console.debug(foo);
+  console.debug(foo);
