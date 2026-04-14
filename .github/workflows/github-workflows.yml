@@ -3,7 +3,7 @@ name: GitHub workflow files
 on:
   pull_request:
     paths:
-      - ".github/workflows/*.yml"
+      - '.github/workflows/*.yml'
   workflow_dispatch:
 
 permissions:
