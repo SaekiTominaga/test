@@ -3,7 +3,7 @@ name: package A
 on:
   pull_request:
     paths:
-      - "packages/a/**"
+      - 'packages/a/**'
   workflow_dispatch:
 
 concurrency:
@@ -20,8 +20,17 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Enable pnpm
+        run: corepack enable pnpm
+
       - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
         with:
-          node-version: "24"
-      - run: npm ci
-      - run: npm run build -w foo
+          node-version-file: '.node-version'
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Install dependencies
+        run: pnpm i --frozen-lockfile
+
+      - run: pnpm -F foo run build

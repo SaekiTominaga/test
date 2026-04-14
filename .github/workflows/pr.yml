@@ -19,14 +19,20 @@ jobs:
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
-      - name: Check formatting
-        run: npx prettier . -c
+      - name: Enable pnpm
+        run: corepack enable pnpm
 
       - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
         with:
-          node-version: "24"
+          node-version-file: '.node-version'
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
 
-      - run: npm ci
+      - name: Install dependencies
+        run: pnpm i --frozen-lockfile
+
+      - name: Check formatting
+        run: pnpm exec prettier . -c
 
       - name: Run lint
-        run: npm run lint
+        run: pnpm lint
