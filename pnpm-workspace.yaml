@@ -12,6 +12,11 @@ blockExoticSubdeps: true
 
 ## Dependency Hoisting Settings
 
+publicHoistPattern:
+  - 'eslint'
+
 ## Build Settings
 
 strictDepBuilds: true
+allowBuilds:
+  esbuild: true
