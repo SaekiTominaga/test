@@ -3,18 +3,18 @@
 	"version": "1.0.0",
 	"license": "MIT",
 	"author": "Saeki Tominaga",
-	"files": [],
-	"type": "module",
-	"main": "dist/test.js",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/SaekiTominaga/config.git"
 	},
-	"scripts": {
-		"build": "tsc"
-	},
+	"files": [],
+	"type": "module",
+	"main": "dist/test.js",
 	"publishConfig": {
 		"access": "public"
+	},
+	"scripts": {
+		"build": "tsc"
 	},
 	"packageManager": "pnpm@10.28.1"
 }
