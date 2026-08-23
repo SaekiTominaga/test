@@ -4,7 +4,6 @@
 		/* Type Checking */
 		"allowUnreachableCode": false,
 		"allowUnusedLabels": false,
-		"alwaysStrict": false,
 		"exactOptionalPropertyTypes": true,
 		"noFallthroughCasesInSwitch": true,
 		"noImplicitOverride": true,
@@ -13,15 +12,15 @@
 		"noUncheckedIndexedAccess": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
-		"strict": true,
 
 		/* Modules */
-		"module": "ES2022",
-		"moduleResolution": "Node",
+		"module": "node18",
+		"moduleResolution": "node16",
+		"types": ["node"],
 		"rewriteRelativeImportExtensions": true,
+		"rootDir": "src",
 
 		/* Emit */
-		"newLine": "lf",
 		"outDir": "dist",
 
 		/* Interop Constraints */
@@ -31,7 +30,7 @@
 		"verbatimModuleSyntax": true,
 
 		/* Language and Environment */
-		"target": "ES2022",
+		"target": "es2025",
 
 		/* Projects */
 		"incremental": true,
