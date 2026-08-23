@@ -3,13 +3,13 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"lint": "eslint packages/*/src/**/*.ts *.{js,mjs}"
+		"lint": "eslint *.{js,mjs,ts}"
 	},
 	"devDependencies": {
 		"@types/node": "^24.10.4",
-		"@w0s/eslint-config": "^9.5.1",
-		"prettier": "^3.8.2",
-		"typescript": "^5.9.3"
+		"@w0s/eslint-config": "^9.9.2",
+		"oxfmt": "^0.64.0",
+		"typescript": "^6.0.3"
 	},
 	"packageManager": "pnpm@10.28.1"
 }
