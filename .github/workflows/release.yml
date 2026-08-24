@@ -52,7 +52,7 @@ jobs:
         run: pnpm -F ${{ steps.extract.outputs.package }} build
 
       - name: Version
-        run: npm version ${{ steps.extract.outputs.version }} -w ${{ steps.extract.outputs.package }} --no-git-tag-version
+        run: pnpm -F ${{ steps.extract.outputs.package }} exec pnpm version ${{ steps.extract.outputs.version }} --no-git-tag-version
 
       - name: Push
         run: |
