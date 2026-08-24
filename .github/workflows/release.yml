@@ -31,7 +31,8 @@ jobs:
           node-version: '24'
           registry-url: 'https://registry.npmjs.org/'
 
-      - run: npm ci
+      - name: Install dependencies
+        run: pnpm i --frozen-lockfile
 
       - name: Version
         id: extract
@@ -43,7 +44,7 @@ jobs:
           echo "version=$version" >> "$GITHUB_OUTPUT"
 
       - name: Build
-        run: npm run build -w ${{ steps.extract.outputs.package }}
+        run: pnpm build -w ${{ steps.extract.outputs.package }}
 
       - name: Version
         run: npm version ${{ steps.extract.outputs.version }} -w ${{ steps.extract.outputs.package }} --no-git-tag-version
