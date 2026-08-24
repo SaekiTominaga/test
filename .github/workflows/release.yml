@@ -49,7 +49,7 @@ jobs:
           echo "version=$version" >> "$GITHUB_OUTPUT"
 
       - name: Build
-        run: pnpm build -w ${{ steps.extract.outputs.package }}
+        run: pnpm -F ${{ steps.extract.outputs.package }} build
 
       - name: Version
         run: npm version ${{ steps.extract.outputs.version }} -w ${{ steps.extract.outputs.package }} --no-git-tag-version
