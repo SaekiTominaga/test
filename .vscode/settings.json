@@ -1,0 +1,14 @@
+{
+	"editor.codeActionsOnSave": {
+		"source.fixAll.oxc": "always"
+	},
+	"editor.defaultFormatter": "oxc.oxc-vscode",
+	"editor.formatOnSave": true,
+	"editor.renderControlCharacters": true,
+	"editor.renderWhitespace": "boundary",
+	"search.exclude": {
+		"/packages/*/dist": true,
+		"**/pnpm-lock.yaml": true,
+		"**/tsconfig.tsbuildinfo": true
+	}
+}
