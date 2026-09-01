@@ -3,4 +3,7 @@ import { defineConfig } from 'oxlint';
 
 export default defineConfig({
 	extends: [config],
+	rules: {
+		'import/unambiguous': 'off',
+	},
 });
