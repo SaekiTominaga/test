@@ -6,11 +6,11 @@
 		"lint": "oxlint"
 	},
 	"devDependencies": {
-		"@types/node": "^24.10.4",
-		"@w0s/oxlint-config": "^1.0.6",
-		"oxfmt": "^0.64.0",
-		"oxlint": "^1.80.0",
-		"typescript": "^7.0.2"
+		"@types/node": "24.10.4",
+		"@w0s/oxlint-config": "1.0.6",
+		"oxfmt": "0.64.0",
+		"oxlint": "1.80.0",
+		"typescript": "7.0.2"
 	},
 	"packageManager": "pnpm@11.8.0"
 }

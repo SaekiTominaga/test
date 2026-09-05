@@ -16,3 +16,7 @@ blockExoticSubdeps: true
 ## Build Settings
 
 strictDepBuilds: true
+
+## Other Settings
+
+savePrefix: ''
