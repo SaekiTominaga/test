@@ -4,8 +4,8 @@
 	"type": "module",
 	"scripts": {
 		"lint": "pnpm run /^lint:.*/",
-		"lint:html": "markuplint \"html/**/*.html\"",
-		"lint:css": "stylelint -f verbose \"css/**/*.css\"",
+		"lint:html": "markuplint html/**/*.html",
+		"lint:css": "stylelint -f verbose css/**/*.css",
 		"lint:js": "oxlint"
 	},
 	"devDependencies": {
